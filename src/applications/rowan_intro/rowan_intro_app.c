@@ -1,5 +1,6 @@
 #include <nitro.h>
 #include <string.h>
+#include <nitroWiFi.h>
 
 #include "constants/heap.h"
 #include "constants/string.h"
@@ -311,6 +312,8 @@ static const ApplicationManagerTemplate sTvApplicationTemplate = {
 
 BOOL RowanIntro_Init(ApplicationManager *appMan, int *unusedState)
 {
+    void* wifi_buff = Heap_Alloc(HEAP_ID_APPLICATION, WCM_WORK_SIZE);
+    WCM_Init(wifi_buff, WCM_WORK_SIZE);
     RowanIntro *manager;
     int heapID = HEAP_ID_ROWAN_INTRO;
 
