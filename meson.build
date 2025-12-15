@@ -17,7 +17,6 @@ fs = import('fs')
 public_includes = include_directories('include', 'asm', 'res')
 toplevel_includes = include_directories('.')
 
-
 ############################################################
 ###                    COMPILER FLAGS                    ###
 ############################################################
@@ -210,13 +209,6 @@ main = executable('main',
     link_args: [
         link_args,
         'platinum.us/main.lcf',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi7.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi7d.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi9.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi9d.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi9d_noip.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/dswifi/lib/libdswifi9_noip.a',
-        # '/opt/wonderful/thirdparty/blocksds/core/libs/libnds/lib/libnds.a',
     ],
     link_depends: main_lcf,
     native: false
@@ -308,10 +300,10 @@ sha1sum = find_program(['sha1sum', 'shasum'], native: true)
 #     args: ['-c', '--quiet', filesys_sha1]
 # )
 
-test('ROM Checksum',
-    sha1sum,
-    args: ['-c', '--quiet', rom_sha1]
-)
+# test('ROM Checksum',
+#     sha1sum,
+#     args: ['-c', '--quiet', rom_sha1]
+# )
 
 
 ############################################################
